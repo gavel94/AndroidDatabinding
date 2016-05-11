@@ -7,7 +7,7 @@
 	*	在fragment中 在onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)中`FragmentTestBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_test, container, false);`通过`binding.getRoot()`返回一个view对象。
 	
 	*	从官方文档上可以看出来通过`DataBindingUtil.inflate(LayoutInflater inflater, int layoutId,
-            @Nullable ViewGroup parent, boolean attachToParent)`需要一个布局加载器，通常我们可以通过`LayoutInflater inflater = LayoutInflater.from(this);`来获取到一个inflater对象，这里主要是针对我们使用listview或者popupWindow等需要一个视图对象来说的
+            @Nullable ViewGroup parent, boolean attachToParent)`需要一个布局加载器，通常我们可以通过`LayoutInflater inflater = LayoutInflater.from(context);`来获取到一个inflater对象，这里主要是针对我们使用listview或者popupWindow等需要一个视图对象来说的
 
 ##	 Data Binding的命名规范
 *	 默认情况下，一个Binding类会基于layout文件的名称而产生，将其转换为Pascal case（译注：首字母大写的命名规范）并且添加“Binding”后缀。上述的layout文件是activity_main.xml，因此生成的类名是ActivityMainBinding。
