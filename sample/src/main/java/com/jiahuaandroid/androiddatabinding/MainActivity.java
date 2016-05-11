@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         User user = new User("DataBinding Test");
         binding.setUser(user);
-
         getSupportFragmentManager().beginTransaction().replace(R.id.main_fl,new TestFragment()).commit();
     }
 }
