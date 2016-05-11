@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by jhhuang on 2016/5/11.
+ * QQ:781913268
  * 作用：recyclerview的适配器
  */
 public class TestAdapter extends BaseRecyclerViewAdapter<Item,TestAdapter.MyViewHolder> {

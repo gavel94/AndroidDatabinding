@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Created by jhhuang on 2016/5/11.
+ * QQ:781913268
  * 作用：测试databinding在fragment的使用
  */
 public class TestFragment extends Fragment {
@@ -23,12 +24,19 @@ public class TestFragment extends Fragment {
     private FragmentTestBinding binding;
     private ArrayList<Item> data;
     private TestAdapter adapter;
+    /**
+     * 线性布局管理器
+     */
     private LinearLayoutManager llmanager;
+    /**
+     * gridview的布局管理器
+     */
     private GridLayoutManager glmanager;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //获取bind对象，进行findviewbyid操作，通过binding.getRoot()获取视图
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_test, container, false);
         Item botton = new Item("listview","gridview");
         binding.setButton(botton);
@@ -43,9 +51,11 @@ public class TestFragment extends Fragment {
     }
 
     private void initListener() {
+        //获取xml文件中带id的控件并设置点击事件
         binding.reGl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //切换recyclerview的布局管理器
                 binding.fragRecycler.setLayoutManager(glmanager);
                 adapter.notifyDataSetChanged();
             }
@@ -66,6 +76,7 @@ public class TestFragment extends Fragment {
         binding.fragRecycler.setLayoutManager(llmanager);
         adapter = new TestAdapter(data);
         binding.fragRecycler.setAdapter(adapter);
+        //初始化recyclerview的数据
         initData();
         adapter.notifyDataSetChanged();
     }
