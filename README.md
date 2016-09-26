@@ -15,3 +15,8 @@
 *	 假设你的activity_main.xml文件中有个控件的id是main_fl,那么获取这个控件的方式就是binding,mainFl,他在自动命名的时候会自动将你的下划线取消，并将后面一个字母大写
 
 ## 这个demo中还包含了一个recyclerview的公共适配器，有兴趣的朋友可以自己看一下。毕竟这里的主角是我们的Data Binding。
+
+## 第一个版本是AS1.5版本的配置,需要添加测试。  九月二十六号更新，AS版本2.2，gradle版本2.2,此时使用databinding只需要开启就可以使用了
+dataBinding {
+        enabled true
+    }
